@@ -15,17 +15,24 @@ router.get('/', function (req, res, next) {
     root: path.join(__dirname, '../static')
   }
 
-  if (req.session.isLoggedIn) {
-    res.redirect('/userpage/profil')
-  } else {
+  res.redirect('/userpage/profil')
 
-    res.sendFile('login.html', options, function (err) {
-      if (err) {
-        next(err)
-      } else {
-          // ok
-      }
-    })
+
+
+  // if (req.session.isLoggedIn) {
+  //   res.redirect('/userpage/profil')
+  // } else {
+
+  //   res.sendFile('login.html', options, function (err) {
+  //     if (err) {
+  //       next(err)
+  //     } else {
+  //         // ok
+  //     }
+  //   })
+
+
+
   }
 
 })
