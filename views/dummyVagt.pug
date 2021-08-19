@@ -1,0 +1,21 @@
+h1 DummyVagt
+body
+.form
+  p Opret dummy-vagt
+  form(action='/login/createDummyVagt', method='POST')
+    input(
+      type='text'
+      name='username' 
+      placeholder='Brugernavn' 
+      required
+    )
+    br
+    input(
+      type='date'
+      name='dato' 
+      placeholder='dato' 
+      required
+    )
+    br
+    br
+    input(type='submit')

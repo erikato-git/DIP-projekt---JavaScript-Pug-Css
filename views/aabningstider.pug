@@ -1,0 +1,23 @@
+doctype html
+html
+  meta(charset="utf-8")
+  title List Users
+  link(rel="stylesheet", type="text/css" href="/styles.css")
+body
+  if er_admin == 'true' || er_admin == true
+    include includes/admin_nav.pug
+  else
+    include includes/user_nav.pug
+
+p #{locals.er_admin}
+  h1 Åbningstider
+  table
+    tr
+      th Navn
+      th Dato
+      th Åbent
+      each tid in tider
+        tr
+          td #{tid.navn}
+          td #{tid.dato}
+          td #{tid.aabner} - #{tid.lukker}

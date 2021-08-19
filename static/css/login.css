@@ -1,0 +1,106 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+#container{
+    display: grid;
+    grid-template-columns: 1fr;
+    justify-items: center;
+}
+
+#curves{
+    display: none;
+}
+
+#logo{
+    height: 25vh;
+    width: auto;
+    z-index: -1;
+}
+
+#form-container{
+    text-align: center;
+    margin-top: 20px;
+}
+
+form{
+    display: grid;
+    gap: 30px;
+}
+
+form span{
+    position: absolute;
+    margin-top: 10px;
+    font-size: 30px;
+}
+
+form input{
+    border: none;
+    border-bottom: 2px solid #005E1C;
+    padding: 20px 0px 20px 45px;
+    font-size: 25px;
+    outline: none;
+}
+
+form button{
+    background: #005E1C;
+    margin-top: 20px;
+    font-size: 40px;
+    color: white;
+    padding: 10px;
+    border: none;
+    border-radius: 30px;
+    cursor: pointer;
+}
+
+form a{
+    text-align: right;
+    text-decoration: none;
+    color: black;
+    font-size: 25px;
+}
+
+form a:hover{
+    text-decoration: underline;
+}
+
+#person{
+    height: 25vh;
+    width: auto;
+    margin-bottom: 20px;
+    border-radius: 100%;
+}
+
+@media(min-width: 992px){
+    #container{
+        grid-template-columns: 1fr 1fr 1fr;
+        justify-items: left;
+    }
+
+    #curves{
+        height: 100vh;
+        width: auto;
+        display: block;
+    }
+
+    #form-container{
+        margin-top: 50px;
+        margin-right: 20px;
+    }
+
+    #logo{
+        margin-top: 150px;
+        height: 32vh;
+        width: auto;
+    }
+
+    form button{
+        margin-top: 50px;
+    }
+
+    #person{
+        margin-bottom: 50px;
+    }
+}

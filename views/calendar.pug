@@ -1,0 +1,77 @@
+doctype html
+head
+  meta(charset='UTF-8')
+  meta(name='viewport' content='width=device-width, initial-scale=1.0')
+  title DFG Vagtkalender123
+  link(rel='stylesheet' type='text/css' href='/static/css/vagt.css')
+  script(src='/static/js/calendar.js' type='text/javascript' defer='')
+  //link(href='/static/css/user.css' rel='stylesheet' type='text/css')
+
+#overlay
+#modal
+  form#modal-content(action='/vagtApi/insertVagt', method='POST')
+    label(for='date') Dato:
+    input#date(type='date' name='date')
+    label(for='users') Bruger:
+    select#users(name='userName')
+    label Tid:
+    #time
+      label(for='timeFrom') Fra:
+      label(for='timeTo') Til:
+      input#timeFrom(type='time', name='timeFrom')
+      input#timeTo(type='time', name='timeTo')
+    button#btnChoose(type='submit') V&aelig;lg
+    button#btnCancel(type='button') Annull&eacute;r
+    
+
+.container
+  .card
+    if er_admin == 'true' || er_admin == true
+      include includes/admin_nav.pug
+    else
+      include includes/user_nav.pug
+
+p #{locals.er_admin}
+    #header-container
+      button#previous(onclick='previous()') &lt; Tidligere
+      h1#monthAndYear.card-header
+      button#next(onclick='next()') Senere &gt;
+    table#calendar.table
+      thead
+        tr
+          th S&oslash;n
+          th Man
+          th Tirs
+          th Ons
+          th Tors
+          th Fre
+          th L&oslash;r
+      tbody#calendar-body
+    // Gå til specifik dato:
+    form.go-to-date
+      h1 G&aring; til dato:
+      select#month(name='month' onchange='jump()')
+        option(value='0') januar
+        option(value='1') februar
+        option(value='2') mar
+        option(value='3') april
+        option(value='4') maj
+        option(value='5') juni
+        option(value='6') juli
+        option(value='7') august
+        option(value='8') september
+        option(value='9') oktober
+        option(value='10') november
+        option(value='11') december
+      select#year(name='year' onchange='jump()')
+        option(value='2020') 2020
+        option(value='2021') 2021
+        option(value='2022') 2022
+        option(value='2023') 2023
+        option(value='2024') 2024
+        option(value='2025') 2025
+        option(value='2026') 2026
+        option(value='2027') 2027
+        option(value='2028') 2028
+        option(value='2029') 2029
+        option(value='2030') 2030

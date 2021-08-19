@@ -1,0 +1,413 @@
+* {
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+    box-sizing: border-box;
+}
+
+/* Google fonts import: */
+/* Font name: Oswald */
+@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@700&display=swap');
+
+
+body {
+    background: radial-gradient(#61E29F, #258B8D);
+}
+
+/* Media query styles for mobile START */
+#overlay{
+    background: rgba(0, 0, 0, 0.7);
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    left: 0;
+    top: 0;
+    display: none;
+    z-index: 1;
+}
+
+#modal{
+    text-align: center;
+    position: fixed;
+    top: 10px;
+    z-index: 2;
+    width: 100%;
+    display: none;
+}
+
+#modal-content {
+    padding: 40px;
+    margin: 50px auto;
+    background-color: #0F473F;
+    border: 1px solid #ffffff;
+    border-radius: 3px;
+    display: grid;
+    grid-template-columns: 90px 170px;
+    gap: 20px;
+    justify-content: center;
+}
+
+#modal-content > label, #time label {
+    color: #ffffff;
+    Font-size: 20px;
+    padding: 5px;
+    text-align: left;
+}
+
+#modal-content input, #users {
+    border: none;
+    border-radius: 3px;
+    padding: 5px;
+}
+
+#time {
+    display: grid;
+    gap: 10px;
+    grid-template-columns: 1fr 1fr;
+}
+
+#btnCancel, #btnChoose {
+    border-radius: 5px;
+    border: none;
+    padding: 8px;
+    cursor: pointer;
+    font-size: 20px;
+}
+
+#btnCancel {
+    color: #ffffff;
+    background: #D93749;
+}
+
+#btnChoose {
+    color: #ffffff;
+    background:green;
+}
+
+.card {
+    margin: 30px auto;
+    width: 100%;
+    height: auto;
+}
+
+#header-container {
+    display: grid;
+    margin: 0 auto;
+    grid-template-columns: repeat(3, 1fr);
+    position: relative;
+    min-height: 40px;
+}
+
+/* Tidligere og Senere-knapperne */
+#previous, #next {
+    width: 100px;
+    padding: 0.5em 2em;
+    border: 2px solid #333333;
+    border-radius: 5px;
+    font-size: 12px;
+    letter-spacing: 1px;
+    position: absolute;
+}
+
+#previous:hover, #next:hover {
+    color: #ffffff;
+    background-color: rgba(0,0,0,0.75);
+    border: 2px solid #ffffff;
+}
+
+#previous {
+    grid-area: 1 / 1;
+}
+
+#monthAndYear {
+    text-align: center;
+    font-size: 28px;
+    font-family: 'Oswald', sans-serif;
+    grid-area: 1 / 2;
+    display: inline-block;
+    color: #ffffff;
+    text-shadow: 1px 1px 3px #000000;
+}
+
+#next { 
+    grid-area: 1 / 3;
+    right: 0;
+}
+
+table {
+    border: 3px solid rgba(255,255,255,0.5);
+    background-color: #0F473F;
+    border-radius: 25px;
+    padding: 5px;
+    width: 100%;
+}
+
+th {
+    padding: 0 0.5em 0.5em 0.5em;
+    font-size: 20px;
+    text-align: center;
+    margin: 0 0 15px 0;
+    font-family: 'Oswald', sans-serif;
+    color: #ffffff;
+    text-shadow: 0 1px 3px #000000;
+}
+
+#calendar {
+    margin: 5px auto;
+}
+
+#calendar-body td {
+    position: relative;
+    padding: 0.5em;
+    width: auto;
+    height: 120px;
+    border: 1px solid #0f1d0f;
+    border-radius: 10px;
+    background-color: rgba(255,255,255,0.4);
+}
+
+#calendar-body td:hover {
+    background-color: #33635C;
+}
+
+#calendar-body td h4 {
+    position: absolute;
+    top: 5px;
+    left: 40%;
+}
+
+/* markering af dagens dato */
+.bg-info {
+    background-color: rgba(255,255,255,0.7) !important;
+    color: #000000;
+}
+
+.go-to-date {
+    display: grid;
+    margin: 0 auto;
+    grid-template-columns: repeat(3, 1fr);
+}
+
+.go-to-date h1 {
+    grid-area: 1 / 1;
+    color: #ffffff;
+    text-shadow: 0 0 4px #000000;
+    text-align: center;
+    font-size: 25px;
+}
+
+#month, #year {
+    font-size: 22px;
+    width: 200px;
+    border: 2px solid #333333;
+    border-radius: 5px;
+}
+
+#month {
+    grid-area: 1 / 2;
+}
+
+#year {
+    grid-area: 1 / 3;
+}
+/* Media query styles for mobile END */
+
+/* Media query styles for tablet START */
+@media(min-width: 768px){
+    #modal-content {
+        width: 50%;
+    }
+
+    .card {
+        margin: 30px auto;
+        min-width: 767px;
+        height: auto;
+    }
+    
+    #header-container {
+        margin: 5px auto;
+        grid-template-columns: repeat(3, 1fr);
+    }
+    
+    /* Tidligere og Senere-knapperne */
+    #previous, #next {
+        width: 200px;
+        font-size: 18px;
+    }
+    
+    #previous {
+        grid-area: 1 / 1;
+    }
+    
+    #monthAndYear {
+        text-align: center;
+        font-size: 40px;
+        font-family: 'Oswald', sans-serif;
+        grid-area: 1 / 2;
+        display: inline-block;
+        color: #ffffff;
+        text-shadow: 1px 1px 3px #000000;
+    }
+    
+    #next { 
+        grid-area: 1 / 3;
+        right: 0;
+    }
+    
+    table {
+        padding: 5px;
+    }
+    
+    #calendar {
+        margin: 5px auto;
+    }
+    
+    #calendar-body td {
+        position: relative;
+        padding: 0.5em;
+        width: 175px;
+        height: 175px;
+        border: 1px solid #0f1d0f;
+        border-radius: 10px;
+        background-color: rgba(255,255,255,0.4);
+    }
+    
+      #calendar-body td h4 {
+        left: 40%;
+    }
+
+
+    .go-to-date {
+        display: grid;
+        margin: 0 auto;
+        grid-template-columns: repeat(3, 1fr);
+    }
+    
+    .go-to-date h1 {
+        grid-area: 1 / 1;
+        color: #ffffff;
+        text-shadow: 0 0 4px #000000;
+        text-align: center;
+    }
+    
+    #month, #year {
+        font-size: 22px;
+        width: 200px;
+        border: 2px solid #333333;
+        border-radius: 5px;
+    }
+    
+    #month {
+        grid-area: 1 / 2;
+    }
+    
+    #year {
+        grid-area: 1 / 3;
+    }
+}
+/* Media query styles for tablet END */
+
+/* Media query styles for desktop START */
+@media(min-width: 992px){
+    .card {
+        margin: 30px auto;
+        min-width: 767px;
+        height: auto;
+    }
+    
+    #header-container {
+        display: grid;
+        height: auto;
+        margin: 5px auto;
+        grid-template-columns: repeat(7, 1fr);
+        justify-items: center;
+    }
+    
+    /* Tidligere og Senere-knapperne */
+    #previous, #next {
+        font-size: 18px;
+        letter-spacing: 1px;
+        position: unset;
+    }
+    
+    #previous {
+        grid-area: 1 / 2;
+    }
+    
+    #monthAndYear {
+        font-size: 40px;
+        font-family: 'Oswald', sans-serif;
+        grid-area: 1 / 3 / span 1 / span 3;
+        display: inline-block;
+    }
+    
+    #next { 
+        grid-area: 1 / 6;
+        
+    }
+    
+    table {
+        border: 10px solid rgba(255,255,255,0.5);
+        width: 80%;
+        padding: 20px;
+    }
+    
+    th {
+        padding: 0 0.5em 0.5em 0.5em;
+        font-size: 40px;
+        text-align: center;
+        margin: 0 0 15px 0;
+        font-family: 'Oswald', sans-serif;
+    }
+    
+    #calendar {
+        margin: 5px auto;
+    }
+    
+    #calendar-body td {
+        position: relative;
+        padding: 0.5em;
+        width: 175px;
+        height: 175px;
+        border: 1px solid #0f1d0f;
+        border-radius: 10px;
+        background-color: rgba(255,255,255,0.4);
+    }
+    
+    #calendar-body td h4 {
+        left: 45%;
+    }
+    
+    .go-to-date {
+        display: grid;
+        margin: 0 auto;
+        grid-template-columns: repeat(7, 1fr);
+    }
+    
+    .go-to-date h1 {
+        grid-area: 1 / 3;
+        color: #ffffff;
+        text-shadow: 0 0 4px #000000;
+        text-align: center;
+    }
+    
+    #month, #year {
+        font-size: 22px;
+        width: 200px;
+        border: 2px solid #333333;
+        border-radius: 5px;
+    }
+    
+    #month {
+        grid-area: 1 / 4;
+    }
+    
+    #year {
+        grid-area: 1 / 5;
+    }
+}
+/* Media query styles for desktop END */
+
+
+
+

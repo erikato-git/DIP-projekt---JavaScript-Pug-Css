@@ -1,0 +1,110 @@
+doctype html
+
+
+head
+  title Profil
+  meta(charset='utf-8')
+  meta(name='viewport' content='width=device-width, initial-scale=1.0')
+  link(href='/static/css/user.css' rel='stylesheet' type='text/css')
+  script(src='/static/js/user-detail.js' defer='')
+if er_admin == 'true' || er_admin == true
+    include includes/admin_nav.pug
+else
+    include includes/user_nav.pug
+
+p #{locals.er_admin}
+#overlay
+#modal
+  form(method='post')
+    span.close &#x2716;
+    label(for='userName')
+      | Brugernavn
+      span *
+    input#userName(type='text' required='required' name="userName")
+    label(for='password')
+      | Kodeord
+      span *
+    input#password(type='password' required='required')
+    label(for='firstName') Fornavn
+    input#firstName(type='text' name="firstName")
+    label(for='lastName') Efternavn
+    input#lastName(type='text' name="lastName")
+    label(for='email') Email
+    input#email(type='email' name="email")
+    label(for='phone') Telefon
+    input#phone(type='tel' maxlength='8' name="phone")
+    label(for='address') Adresse
+    input#address(type='text' name="address")
+    label(for='zipCode') Postnummer
+    input#zipCode(type='number' maxlength='4' name="zipCode")
+    label(for='city') By
+    input#city(type='text' name="city")
+    label(for='birthday') F&oslash;dselsdato
+    input#birthday(type='date' name="birthday")
+    label K&oslash;n
+    .sex
+      label(for='male') Mand
+      input#male(type='radio' value='Mand' name='gender' checked='checked')
+      label(for='female') Kvinde
+      input#female(type='radio' value='Kvinde' name='gender')
+    label(for='photo') Billede
+    input#photo(type='file' accept='image/*')
+    button(type='reset') Ryd felter
+    button(type='submit') Godkend
+.container
+  h2 Profil
+  img(src='/static/img/user.png')
+  .inner
+    h4 Brugernavn:
+    if locals.userName
+        p #{userName}
+    else
+        p -
+    h4 Fornavn:
+    if locals.firstName
+        p #{firstName}
+    else
+        p -
+    h4 Efternavn:
+    if locals.lastName
+        p #{lastName}
+    else
+        p -
+    h4 Email:
+    if locals.email
+        p #{email}
+    else
+        p -
+    h4 Telefon:
+    if locals.phone
+        p #{phone}
+    else
+        p -
+    h4 Adresse:
+    if locals.address
+        p #{address}
+    else
+        p -
+    h4 Postnummer:
+    if locals.zipCode
+        p #{zipCode}
+    else
+        p -
+    h4 By:
+    if locals.city
+        p #{city}
+    else
+        p -
+    h4 Fødselsdato:
+    if locals.birthday
+        p #{birthday}
+    else
+        p -
+    h4 Køn:
+    if locals.sex
+        p #{sex}
+    else
+        p -
+    
+    
+    button.edit Rediger

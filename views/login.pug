@@ -1,0 +1,18 @@
+include includes/header
+if !isLoggedIn
+.form
+  h1 Login Form
+  form(action='/login/auth', method='POST')
+    input(
+      type='text'
+      name='username' 
+      placeholder='Brugernavn' 
+      required
+    )
+    input(
+      type='password'
+      name='password' 
+      placeholder='Kodeord' 
+      required
+    )
+    input(type='submit')

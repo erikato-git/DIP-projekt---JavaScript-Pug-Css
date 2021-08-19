@@ -1,0 +1,55 @@
+doctype html
+html
+  head
+    meta(charset='utf-8')
+    title Tilføj ny event
+    link(rel='stylesheet', type='text/css', href='/styles.css')
+  body
+    include includes/user_nav.pug
+    // tilgøj til admin
+    .Event-form
+      h1 Opdater event
+      form(method='POST', action='/opdater/'+ tid.id)
+        label(
+          for='event'
+        ) Begivenhedens navn:
+        input(
+          type='text'
+          id='event'
+          name='navn'
+          value=tid.navn
+          required
+        )
+        label(
+          for='date'
+        ) Indsæt dato:
+        input(
+          type='date'
+          id='date'
+          name='dato' 
+          value=tid.dato
+          required
+        )
+        label(
+          for='openTime'
+        ) Anfør åbningstid:
+        input(
+          type='time'
+          id='openTime'
+          name='aabner'
+          value=tid.aabner
+          required
+        )
+        label(
+          for='closeTime'
+        ) Anfør lukketid:
+        input(
+          type='time'
+          id='closeTime'
+          name='lukker'
+          value=tid.lukker
+          required
+        )
+        button(
+          type='submit'
+        ) Opdater

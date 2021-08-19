@@ -1,0 +1,55 @@
+nav{
+    display: none;
+    position: fixed;
+    top: 0;
+    z-index: 3;
+}
+
+.visible{
+    display: block;
+}
+
+nav ul{
+    list-style: none;
+}
+
+nav li{
+    background: #0F473F;
+    border-bottom: 1px solid white;
+}
+
+nav li:last-child{
+    border: none;
+}
+
+nav li:hover{
+    background: #33635C;
+}
+
+nav a{
+    color: white;
+    text-decoration: none;
+    font-size: 25px;
+    display: block;
+    padding: 15px;
+}
+
+#menuButton{
+    background: #0F473F;
+    display: inline-block;
+    font-size: 22px;
+    color: white;
+    padding: 14px 20px;
+    border-top-right-radius: 30px;
+    border-bottom-right-radius: 30px;
+    cursor: pointer;
+    margin-left: -4px;
+    vertical-align: top;
+    z-index: 3;
+    position: fixed;
+    top: 0;
+}
+
+.move{
+    left: 243px;
+}

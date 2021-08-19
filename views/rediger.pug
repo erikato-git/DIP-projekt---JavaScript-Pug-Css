@@ -1,0 +1,28 @@
+doctype html
+html
+  meta(charset="utf-8")
+  title Rediger åbningstid
+  link(rel="stylesheet", type="text/css" href="/styles.css")
+body
+  include includes/admin_nav.pug
+  //Skal ændres til admin
+  h1 Åbningstider
+      table
+        tr
+        th Slet?
+        th Opdater
+        th Navn
+        th Dato
+        th Åbent
+             each tid in tider
+                tr
+                    td 
+                      a(href = "delete/" + tid.id) 
+                        img(src="/delete.png")
+                    td 
+                      a(href = "opdater/" + tid.id) 
+                        img(src="/edit.png")
+                    td #{tid.navn}
+                    td #{tid.dato}
+                    td #{tid.aabner}  - #{tid.lukker}
+

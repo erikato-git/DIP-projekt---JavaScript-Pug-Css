@@ -1,0 +1,53 @@
+doctype html
+html
+  head
+    meta(charset='utf-8')
+    title Tilføj ny åbningstid
+    link(rel='stylesheet', type='text/css', href='/styles.css')
+  body
+    include includes/admin_nav.pug
+    div.Event-form
+      h1 Tilføj ny åbningstid
+      form(action='addAabningstid', method='POST')
+        label(
+          for='event'
+        ) Begivenhedens navn:
+        input(
+          type='text'
+          id='event'
+          name='navn'
+          required
+        )
+        label(
+          for='date'
+        ) Indsæt dato:
+        input(
+          type='date'
+          id='date'
+          name='dato'
+          placeholder='DD-MM-ÅÅÅÅ'
+          required
+        )
+        label(
+          for='openTime'
+        ) Anfør åbningstid:
+        input(
+          type='time'
+          id='openTime'
+          name='aabner'
+          placeholder='TT:MM'
+          required
+        )
+        label(
+          for='closeTime'
+        ) Anfør lukketid:
+        input(
+          type='time'
+          id='closeTime'
+          name='lukker'
+          placeholder='TT:MM'
+          required
+        )
+        button(
+          type='submit'
+        ) Tilføj
